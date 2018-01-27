@@ -1,5 +1,6 @@
 #!/bin/bash
 
+DIR=/var/www/html/git
 if [ -z $1 ] ; then
   echo "specify the name of repository"
   exit 1
@@ -11,8 +12,8 @@ if [ -e $1.git ] ; then
 fi
 
 REPONAME=$1
-cd /var/lib/git
+cd $DIR
 git init --bare $REPONAME.git
-chmod -R 777 /var/lib/git/$REPONAME.git
+chmod -R 777 $DIR/$REPONAME.git
 cd $REPONAME.git
 git config http.receivepack true
