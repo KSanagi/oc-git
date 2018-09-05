@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR=/var/www/html/git
+DIR=/var/www/git
 if [ -z $1 ] ; then
   echo "specify the name of repository"
   exit 1
