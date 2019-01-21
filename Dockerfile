@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:7.6.1810
 
 RUN yum -y install httpd git git-daemon git-all
 ADD ./httpd.conf /root/httpd.conf
