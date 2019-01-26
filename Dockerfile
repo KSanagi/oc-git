@@ -8,5 +8,6 @@ ADD ./repo-create.sh /usr/bin/
 ADD ./repo-delete.sh /usr/bin/
 RUN chmod 777 /usr/bin/repo-create.sh
 RUN chmod 777 /usr/bin/repo-create.sh
+RUN sed -i -e "s/Alias \/git/Alias \/gitweb/g" /etc/httpd/conf.d/git.conf
 
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
