@@ -9,12 +9,9 @@ if [ -z $REPO ] ; then
 fi
 
 if [ -e $DIR/$REPO.git ] ; then
-  echo "$1.git exists"
+  rm -rf $DIR/$REPO.git
+  exit 0
+else
+  echo "$REPO.git does not exist"
   exit 1
 fi
-
-cd $DIR
-git init --bare $REPO.git
-chmod -R 777 $DIR/$REPO.git
-cd $REPO.git
-git config http.receivepack true
